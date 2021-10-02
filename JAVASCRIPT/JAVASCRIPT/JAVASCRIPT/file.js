@@ -1,40 +1,22 @@
-// Importing the library
-const fs = require('fs');
+let values = ['emo', 'two', 'three'];
 
-//getting the file
-const data = fs.readFileSync('input.txt', 'utf8');
-// Making them into lines
-file = data.split('\n');
+console.log(values)
+console.log(values[0])
 
 
-
-const part1 = (file) => {
-    for (var i = 0; i < file.length; i++) {
-        for (var j = 0; j < file.length; j++) {
-            if (parseInt(file[i]) + parseInt(file[j]) == 2020) {
-                console.log(parseInt(file[i]) * parseInt(file[j]));
-                break;
-            }
-
-        }
+let p = new Promise((resolve, reject) => {
+    let condition = true;
+    if (condition) {
+        resolve(condition)
+    } else {
+        reject(condition);
     }
-};
 
-const part2 = (file) => {
-    for (var i = 0; i < file.length; i++) {
-        for (var j = 0; j < file.length; j++) {
-            for (var k = 0; k < file.length; k++) {
-                if (parseInt(file[i]) + parseInt(file[j]) + parseInt(file[k]) == 2020) {
-                    console.log(parseInt(file[i]) * parseInt(file[j]) * parseInt(file[k]));
-                    break;
-                }
-            }
+})
 
-        }
-    }
-};
+p.then((x) => {
 
-
-
-part1(file);
-part1(file);
+    console.log('the input was ' + x);
+}).catch((e) => {
+    console.log('the error is :' + e.message + ' and the message was ' + x);
+})
